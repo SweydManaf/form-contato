@@ -19,6 +19,8 @@
         
         form {
             background-color: white;
+            border-radius: 5px;
+            box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.363);
             max-width: 500px;
             width: 70%;
             padding: 20px;
@@ -48,6 +50,7 @@
         form input[type=email]:focus,
         form input[type=password]:focus {
             border: 1px solid #4A5F6A;
+            outline: none;
         }
         
         form input[type=submit] {
@@ -72,11 +75,26 @@
 <body>
     <form>
         <h3>Entrar em contato</h3>
-        <input type="email" id="email" name="email" placeholder="Seu e-mail...">
-        <input type="password" name="senha" placeholder="Sua senha... ">
+        <input id="email" type="email" id="email" name="email" placeholder="Seu e-mail...">
+        <input id="password" type="password" name="senha" placeholder="Sua senha... ">
         <input type="submit" value="Enviar" name="acao">
     </form>
-
+    <script>
+        var email = document.getElementById('email')
+        var password = document.getElementById('password')
+        email.addEventListener('focus', () => {
+            email.style.borderColor = '#4A5F6A'
+        })
+        email.addEventListener('blur', () => {
+            email.style.borderColor = '#ccc'
+        })
+        password.addEventListener('focus', () => {
+            password.style.borderColor = '#4A5F6A'
+        })
+        password.addEventListener('blur', () => {
+            password.style.borderColor = '#ccc'
+        })
+    </script>
 </body>
 
 </html>
